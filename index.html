@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mrs Qi</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+	<audio src="./aLittleLove.mp3" autoplay loop></audio>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2013—05-02,</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Boy name = <span class="keyword">Mr</span> Yan<br />
+			Girl name = <span class="keyword">Mrs</span> Qi<br />
+			<span class="comments">// Fall in love river. </span><br />
+			The boy love the girl;<br />
+			<span class="comments">// They love each other.</span><br />
+			The girl love the boy;<br />
+			<span class="comments">// AS time goes on.</span><br />
+			The boy can not be separated the girl;<br />
+			<span class="comments">// At the same time.</span><br />
+			The girl can not be separated the boy;<br />
+			<span class="comments">// Both wind and snow all over the sky.</span><br />
+			<span class="comments">// 虽然你笨笨的，又爱耍脾气，又任性，</span><br />
+			<span class="keyword">但是</span> 我还是爱你的 <span class="keyword">距离远吵架多也不影响我喜欢你</span>;<br />
+			<span class="keyword">等你</span> 回来<span class="keyword"> 再整治你的小脾气</span>;<br />
+			<span class="placeholder"/><span class="comments">// 在一起这么久</span><br />
+			<span class="placeholder"/><span class="comments">// 总是聚少离多</span><br />
+			<span class="placeholder"/><span class="comments">// 去年你在美国，今年你在英国</span><br />
+			<span class="placeholder"/><span class="comments">// 又一个圣诞节没陪你过啦</span><br />
+			<br>
+			<br>
+			圣诞快乐，<br />
+			好好玩耍，享受你最后一个一个人的圣诞节，以后你就没机会了<br />
+			爱你，^_^<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					<!--亲爱的，这是我们相爱在一起的时光。-->
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					<div class="signature">- 闫先生</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2013, 04, 02);
+together.setHours(24);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+</html>
